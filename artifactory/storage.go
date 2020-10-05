@@ -258,6 +258,7 @@ func (s *StorageService) SetItemProperties(repo, path string, properties map[str
 	}
 
 	u := fmt.Sprintf("/api/storage/%s/%s?properties=%s&recursive=1", repo, path, propertyString)
+	fmt.Println("url", u)
 
 	resp, err := s.client.Call("PUT", u, nil, nil)
 	return resp, err
